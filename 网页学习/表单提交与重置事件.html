@@ -1,0 +1,89 @@
+<table width="478" height="333" border="0" align="center" cellpadding="0" cellspacing="0" background="red">
+	<tr>
+		<td align="center" valign="top"><br>
+			<br>
+			<br>
+			<br><br><table width="86%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#6699CC">
+				
+				<form name="form1" onreset="return AllReset()" onsubmit="return AllSubmit()">
+					
+					<tr bgcolor="#FFFFFF">
+						<td height="22" align="right">varity:</td>
+						<td height="22" align="left">
+							<select name="txt1" id="txt1">
+								<option value="shebei">shebei</option>
+								<option value="dianqi">dianqi</option>
+								<option value="yongping">yongping</option>
+							</select>
+								<select name="txt2" id="txt2">
+								<option value="xiangji">xiangji</option>
+								<option value="daying">daying</option>
+								
+							</select>
+						</td>
+					</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">name:</td>
+<td height="22" align="left"><input type="text" name="txt3" id="txt3" size="30" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">price:</td>
+<td height="22" align="left">	<input type="text" name="txt4" id="txt4" size="10" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">price2:</td>	
+<td height="22" align="left"><input type="text" name="txt5" id="txt5" size="10" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">content:</td>	
+<td height="22" align="left"><textarea name="txt6" id="txt6" size="30"  cols="35" rows="4"></textarea></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">number:</td>	
+<td height="22" align="left"><input type="text" name="txt7" id="txt7" size="10"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+	<td height="22" colspan="2" align="center"><input type="submit" name="sub" id="sub2" value="subb">&nbsp;
+		<input type="reset" name="Submit2" value="restt"></td>
+</tr>
+</form>
+		</table>
+		</td>
+	</tr>
+	
+</table>
+
+<script type="text/javascript">
+	function AllReset()
+	{
+		if(window.confirm("yes or no?"))
+			return true;
+		else
+			return false;
+	}
+	function AllSubmit()
+	{
+		var T=true;
+		var e=window.event;
+		var obj=e.srcElement;
+		for(var i=1;i<=7;i++)
+		{
+			if(eval("obj."+"txt"+i).value=="")
+			{
+				T=false;
+				break;
+			}
+		}
+		if(!T)
+		{
+			alert("abbit have nothing!");
+		}
+		return T;
+	}
+</script>

@@ -1,0 +1,44 @@
+<table align="center" width="337" height="204" border="0">
+<tr>
+<td width="108">usenane:</td>
+<td width="213">
+	<form name="form1" method="post" action="">
+	<input type="text" name="textfield1" onfocus="txtfocus()" onblur="txtblur()">
+	</form>
+</td>
+</tr>
+
+<tr>
+<td width="108">email:</td>
+<td width="213">
+	<form name="form1" method="post" action="">
+	<input type="text" name="textfield2" onfocus="txtfocus()" onblur="txtblur()">
+	</form>
+</td>
+</tr>
+
+<tr>
+<td width="108">password:</td>
+<td width="213">
+	<form name="form1" method="post" action="">
+	<input type="text" name="textfield3" onfocus="txtfocus()" onblur="txtblur()">
+	</form>
+</td>
+</tr>
+</table>
+
+<script type="text/javascript">
+	function txtfocus(event)
+	{
+		var e=window.event;
+		var obj=e.srcElement;
+		obj.style.background="#FF9966";
+	}
+
+		function txtblur(event)
+	{
+		var e=window.event;
+		var obj=e.srcElement;
+		obj.style.background="#FFFFFF";
+	}
+</script>

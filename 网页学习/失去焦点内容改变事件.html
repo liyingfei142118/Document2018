@@ -1,0 +1,19 @@
+<form name="form1" method="post" action="">
+	<input type="text" name="textfield" size="23" value="1111111">
+	<select name="menu1" onchange="fcolor()">
+		<option value="black">black</option>
+		<option value="blue">blue</option>
+		<option value="green">green</option>
+		<option value="red">red</option>
+	</select>	
+</form>
+
+<script type="text/javascript">
+	function fcolor(event)
+	{
+		var e=window.event;
+		var obj=e.srcElement;
+		form1.textfield.style.color=obj.options[obj.selectedIndex].value;	
+	}
+
+</script>
