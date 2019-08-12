@@ -1,0 +1,81 @@
+
+module SingleCPU(
+    input CLK,
+    input Reset,
+    output [5:0] op,
+    output [4:0] rs,
+    output [4:0] rt,
+    output [4:0] rd,
+    output [4:0] shf,
+    output [5:0] func,
+    output [25:0] targe,
+    output [15:0] immediate,
+    output [31:0] busA,
+    output [31:0] busB,
+    output [31:0] WriteData,
+    output [31:0] DataOut,
+    output [31:0] currentAddress,
+    output [31:0] result,
+
+
+
+   output [3:0] ALUop,
+   output [3:0] funcop,
+   output [3:0] aluop,
+   output [31:0] B, 
+   output [31:0]newAddress,
+   output[31:0] Eimm,  
+   output [4:0] WriteReg,  
+   output Branch,
+   output Jump,
+   output RegDst,
+   output ALUsrc,
+   output MemtoReg,
+   output RegWr,
+   output MemWr,
+   output ExtOp,
+   output pcW,
+   output Rtype,
+   output Jr,
+   output Bgez, 
+   output Bgtz,
+   output Blez,
+   output Bltz,
+   output _B,
+   output Jal,
+   output Jalr);
+
+   wire  Branch_bn,Branch_be;
+    PC pc(CLK, Reset,pcW, newAddress, currentAddress);
+
+    ControlUnit control(func,op,rt,Branch_bn,Branch_be,Jump,RegDst,ALUsrc,funcop,aluop,MemtoReg,RegWr,MemWr,ExtOp,pcW,Rtype,Jr,Bgez, Bgtz, Blez, Bltz,_B,Jal,Jalr);
+
+
+    InstructionMemory im(currentAddress, op, rs, rt, rd,shf,func, immediate,targe);
+
+        
+       
+     RegisterFile rf(CLK, RegWr,Jal,Jalr,currentAddress, rs, rt, WriteReg, WriteData, busA, busB);
+
+    Control1 con(Rtype,funcop,aluop,ALUop);
+
+    Multiplexer32 m321(ALUsrc, Eimm, busB, B);
+
+    ALU alu(ALUop,busA,B, shf,immediate, Zero, result);
+
+    assign Branch=((Branch_bn &&(result==0))||(Branch_bn &&(result!=0)))?1:0;
+    SignZeroExtend Extend(immediate, ExtOp, Eimm);  
+
+
+    DataMemory dm(op,CLK,MemWr,_B,busA,result,busB, DataOut); 
+    
+    Multiplexer5 m5(RegDst, rd, rt, WriteReg);
+
+    
+
+    Multiplexer32 m322(MemtoReg,DataOut , result, WriteData);
+
+   NPC pc1(busA,targe,Eimm,immediate,Branch,Jump,Jr,Bgez, Bgtz, Blez, Bltz,Jal,Jalr, Zero,currentAddress,newAddress);
+   
+   
+endmodule

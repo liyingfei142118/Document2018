@@ -1,0 +1,92 @@
+D:/modelisim/modelsim_ase/CPU/tSingleCpu.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/tSingleCpu.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module tSingleCPU
+
+Top level modules:
+	tSingleCPU
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/Multip32.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/Multip32.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module Multiplexer32
+
+Top level modules:
+	Multiplexer32
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/control.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/control.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ControlUnit
+
+Top level modules:
+	ControlUnit
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/NPC.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/NPC.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module NPC
+
+Top level modules:
+	NPC
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/SingleCpu.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/SingleCpu.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module SingleCPU
+
+Top level modules:
+	SingleCPU
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/ALU.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/ALU.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/Control1.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/Control1.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module Control1
+
+Top level modules:
+	Control1
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/ExE.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/ExE.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module SignZeroExtend
+
+Top level modules:
+	SignZeroExtend
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/mux.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/mux.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mux2
+
+Top level modules:
+	mux2
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/registerFile.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/registerFile.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/Multip5.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/Multip5.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module Multiplexer5
+
+Top level modules:
+	Multiplexer5
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/dataMemory.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/dataMemory.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} D:/modelisim/modelsim_ase/CPU/PC.v {1 {vlog -work work -stats=none D:/modelisim/modelsim_ase/CPU/PC.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}}

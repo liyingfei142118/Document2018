@@ -1,0 +1,9 @@
+ module Control1(
+input Rtype,
+input [2:0] funcop,
+input [2:0] aluop,
+output [2:0] ALUop);
+
+assign ALUop=Rtype?funcop:aluop;
+
+endmodule

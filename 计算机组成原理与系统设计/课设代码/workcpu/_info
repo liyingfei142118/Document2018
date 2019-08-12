@@ -1,0 +1,303 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/modelisim/modelsim_ase/CPU
+vALU
+Z1 !s110 1530933788
+!i10b 1
+!s100 9gk]__cl=]IdCK6gJAiR_3
+I`<3HhZDM^K4dD^PKFL=3m0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1530770874
+8D:/modelisim/modelsim_ase/CPU/ALU.v
+FD:/modelisim/modelsim_ase/CPU/ALU.v
+L0 2
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1530933787.000000
+!s107 D:/modelisim/modelsim_ase/CPU/ALU.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/ALU.v|
+!i113 1
+Z5 o-work workcpu
+n@a@l@u
+vControl1
+R1
+!i10b 1
+!s100 faC^^XWfbo8K^nzzN2O9J1
+I;@793ze2LSoiM25ER6bW[1
+R2
+R0
+w1530601145
+8D:/modelisim/modelsim_ase/CPU/Control1.v
+FD:/modelisim/modelsim_ase/CPU/Control1.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z6 !s108 1530933788.000000
+!s107 D:/modelisim/modelsim_ase/CPU/Control1.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/Control1.v|
+!i113 1
+R5
+n@control1
+vControlUnit
+R1
+!i10b 1
+!s100 :Tf@@7`Q7H]Mo05XSAMMC2
+IUVCd^>[RKI10W<4Y4Nk:T0
+R2
+R0
+w1530774017
+8D:/modelisim/modelsim_ase/CPU/control.v
+FD:/modelisim/modelsim_ase/CPU/control.v
+L0 50
+R3
+r1
+!s85 0
+31
+R6
+!s107 D:/modelisim/modelsim_ase/CPU/control.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/control.v|
+!i113 1
+R5
+n@control@unit
+vDataMemory
+R1
+!i10b 1
+!s100 Y^I;zk9_j>gm8oUe0ScPk1
+I9YRSI7BVFWe1d:mS[F5mn0
+R2
+R0
+w1530883170
+8D:/modelisim/modelsim_ase/CPU/dataMemory.v
+FD:/modelisim/modelsim_ase/CPU/dataMemory.v
+L0 2
+R3
+r1
+!s85 0
+31
+R6
+!s107 D:/modelisim/modelsim_ase/CPU/dataMemory.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/dataMemory.v|
+!i113 1
+R5
+n@data@memory
+vInstructionMemory
+Z7 !s110 1530933789
+!i10b 1
+!s100 :z[iHVSjM`=`ALcMCbcGQ1
+I;S?`zFmWK>203e7?=741S3
+R2
+R0
+w1530756771
+8D:/modelisim/modelsim_ase/CPU/InstructionMemory.v
+FD:/modelisim/modelsim_ase/CPU/InstructionMemory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R6
+!s107 D:/modelisim/modelsim_ase/CPU/InstructionMemory.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/InstructionMemory.v|
+!i113 1
+R5
+n@instruction@memory
+vMultiplexer32
+R7
+!i10b 1
+!s100 oAAfzbLA]J>LJCg:]Xg5B1
+IFcO[N05B8o4H`SS2;XK@>2
+R2
+R0
+w1528809880
+8D:/modelisim/modelsim_ase/CPU/Multip32.v
+FD:/modelisim/modelsim_ase/CPU/Multip32.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1530933789.000000
+!s107 D:/modelisim/modelsim_ase/CPU/Multip32.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/Multip32.v|
+!i113 1
+R5
+n@multiplexer32
+vMultiplexer5
+R7
+!i10b 1
+!s100 klk^mb`GoeHV5`585Q^9E1
+IGmUJgW`Qc88BeY3`2o5d50
+R2
+R0
+w1528809821
+8D:/modelisim/modelsim_ase/CPU/Multip5.v
+FD:/modelisim/modelsim_ase/CPU/Multip5.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/modelisim/modelsim_ase/CPU/Multip5.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/Multip5.v|
+!i113 1
+R5
+n@multiplexer5
+vmux2
+R7
+!i10b 1
+!s100 ^g>Y2W>_Fez>3bjYdzQzK2
+IW[oClG0Aao_CS;ibC;[W?1
+R2
+R0
+w1528641153
+8D:/modelisim/modelsim_ase/CPU/mux.v
+FD:/modelisim/modelsim_ase/CPU/mux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/modelisim/modelsim_ase/CPU/mux.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/mux.v|
+!i113 1
+R5
+vNPC
+R7
+!i10b 1
+!s100 90M8`V7IF[ajniZl76Hf=1
+IoR6aOJ@lTeMzmCE8Oi:hz3
+R2
+R0
+w1530882572
+8D:/modelisim/modelsim_ase/CPU/NPC.v
+FD:/modelisim/modelsim_ase/CPU/NPC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/modelisim/modelsim_ase/CPU/NPC.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/NPC.v|
+!i113 1
+R5
+n@n@p@c
+vPC
+R7
+!i10b 1
+!s100 mLWCVIVMRkF:53D8_g5<V1
+IeXMA<8KVjHhRoke`=PjIU1
+R2
+R0
+w1530780827
+8D:/modelisim/modelsim_ase/CPU/PC.v
+FD:/modelisim/modelsim_ase/CPU/PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/modelisim/modelsim_ase/CPU/PC.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/PC.v|
+!i113 1
+R5
+n@p@c
+vRegisterFile
+Z9 !s110 1530933790
+!i10b 1
+!s100 M]U_=VXzQ3R?UAHS;12;m1
+I^TB2UULeBT6f0EkcEBA`F3
+R2
+R0
+w1530698212
+8D:/modelisim/modelsim_ase/CPU/registerFile.v
+FD:/modelisim/modelsim_ase/CPU/registerFile.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 D:/modelisim/modelsim_ase/CPU/registerFile.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/registerFile.v|
+!i113 1
+R5
+n@register@file
+vSignZeroExtend
+R1
+!i10b 1
+!s100 _i[^8z;ojzaOgnN4Gi5K[2
+IPP=EiAaMh>d964PS5<[kY2
+R2
+R0
+w1528809044
+8D:/modelisim/modelsim_ase/CPU/ExE.v
+FD:/modelisim/modelsim_ase/CPU/ExE.v
+L0 2
+R3
+r1
+!s85 0
+31
+R6
+!s107 D:/modelisim/modelsim_ase/CPU/ExE.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/ExE.v|
+!i113 1
+R5
+n@sign@zero@extend
+vSingleCPU
+R9
+!i10b 1
+!s100 1AHc]2YG^PnS[Tz[>iFD_3
+IGoRN17_n8ReLMO]jE2U[R1
+R2
+R0
+w1530768820
+8D:/modelisim/modelsim_ase/CPU/SingleCpu.v
+FD:/modelisim/modelsim_ase/CPU/SingleCpu.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1530933790.000000
+!s107 D:/modelisim/modelsim_ase/CPU/SingleCpu.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/SingleCpu.v|
+!i113 1
+R5
+n@single@c@p@u
+vtSingleCPU
+!s110 1530933787
+!i10b 1
+!s100 @g6ME>^QK3mHiAhTnO^FM3
+IDO[=]C?fmY2DJV0cRJeFc2
+R2
+R0
+w1530697300
+8D:/modelisim/modelsim_ase/CPU/tSingleCpu.v
+FD:/modelisim/modelsim_ase/CPU/tSingleCpu.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/modelisim/modelsim_ase/CPU/tSingleCpu.v|
+!s90 -reportprogress|300|-work|workcpu|-stats=none|D:/modelisim/modelsim_ase/CPU/tSingleCpu.v|
+!i113 1
+R5
+nt@single@c@p@u

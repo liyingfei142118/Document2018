@@ -1,0 +1,303 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/modelisim/modelsim_ase/jizu
+vALU
+Z1 !s110 1530936775
+!i10b 1
+!s100 c6mH1zaKb43i_VHPL[e632
+I4VMT]cXNKTlW[zEfZF:Xj3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1530934930
+8D:/modelisim/modelsim_ase/jizu/ALU.v
+FD:/modelisim/modelsim_ase/jizu/ALU.v
+L0 2
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1530936774.000000
+!s107 D:/modelisim/modelsim_ase/jizu/ALU.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/ALU.v|
+!i113 1
+Z4 o-work 66
+n@a@l@u
+vControl1
+R1
+!i10b 1
+!s100 faC^^XWfbo8K^nzzN2O9J1
+IEJ83_VojD<7KHIOUCi69`3
+R2
+R0
+w1530936161
+8D:/modelisim/modelsim_ase/jizu/Control1.v
+FD:/modelisim/modelsim_ase/jizu/Control1.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z5 !s108 1530936775.000000
+!s107 D:/modelisim/modelsim_ase/jizu/Control1.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/Control1.v|
+!i113 1
+R4
+n@control1
+vControlUnit
+R1
+!i10b 1
+!s100 Od1;S6TY@=FRT:GhY?el11
+I50lmSISR>LXVP`H5<heYM0
+R2
+R0
+w1530935398
+8D:/modelisim/modelsim_ase/jizu/control.v
+FD:/modelisim/modelsim_ase/jizu/control.v
+L0 2
+R3
+r1
+!s85 0
+31
+R5
+!s107 D:/modelisim/modelsim_ase/jizu/control.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/control.v|
+!i113 1
+R4
+n@control@unit
+vDataMemory
+R1
+!i10b 1
+!s100 C:z[eFISWSSATAEPEVeMF1
+II9J?F`InMGgL9^Ac9oW842
+R2
+R0
+w1530936285
+8D:/modelisim/modelsim_ase/jizu/dataMemory.v
+FD:/modelisim/modelsim_ase/jizu/dataMemory.v
+L0 2
+R3
+r1
+!s85 0
+31
+R5
+!s107 D:/modelisim/modelsim_ase/jizu/dataMemory.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/dataMemory.v|
+!i113 1
+R4
+n@data@memory
+vInstructionMemory
+R1
+!i10b 1
+!s100 obQYaofB8[10XmD=Y6KEN1
+IneaJ9JTZ9Tafmj>k;YMmY0
+R2
+R0
+w1530935844
+8D:/modelisim/modelsim_ase/jizu/InstructionMemory.v
+FD:/modelisim/modelsim_ase/jizu/InstructionMemory.v
+L0 1
+R3
+r1
+!s85 0
+31
+R5
+!s107 D:/modelisim/modelsim_ase/jizu/InstructionMemory.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/InstructionMemory.v|
+!i113 1
+R4
+n@instruction@memory
+vMultiplexer32
+Z6 !s110 1530936776
+!i10b 1
+!s100 oAAfzbLA]J>LJCg:]Xg5B1
+I_m83>@3h4;E^BFAdVfcKZ1
+R2
+R0
+w1528809880
+8D:/modelisim/modelsim_ase/jizu/Multip32.v
+FD:/modelisim/modelsim_ase/jizu/Multip32.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z7 !s108 1530936776.000000
+!s107 D:/modelisim/modelsim_ase/jizu/Multip32.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/Multip32.v|
+!i113 1
+R4
+n@multiplexer32
+vMultiplexer5
+R1
+!i10b 1
+!s100 klk^mb`GoeHV5`585Q^9E1
+I7E^`@RL<=K^9d<IAzM?e:3
+R2
+R0
+w1530863676
+8D:/modelisim/modelsim_ase/jizu/Multip5.v
+FD:/modelisim/modelsim_ase/jizu/Multip5.v
+L0 1
+R3
+r1
+!s85 0
+31
+R5
+!s107 D:/modelisim/modelsim_ase/jizu/Multip5.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/Multip5.v|
+!i113 1
+R4
+n@multiplexer5
+vmux2
+R6
+!i10b 1
+!s100 ^g>Y2W>_Fez>3bjYdzQzK2
+I>Cl0kdafNKVE76lYYCHLa3
+R2
+R0
+w1528641153
+8D:/modelisim/modelsim_ase/jizu/mux.v
+FD:/modelisim/modelsim_ase/jizu/mux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/modelisim/modelsim_ase/jizu/mux.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/mux.v|
+!i113 1
+R4
+vNPC
+R6
+!i10b 1
+!s100 h:Aj5?mSB?<N@Dj=DciHH2
+I[KGXa;P0Ze7[VK=lU1]m?3
+R2
+R0
+w1530935946
+8D:/modelisim/modelsim_ase/jizu/NPC.v
+FD:/modelisim/modelsim_ase/jizu/NPC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/modelisim/modelsim_ase/jizu/NPC.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/NPC.v|
+!i113 1
+R4
+n@n@p@c
+vPC
+R6
+!i10b 1
+!s100 TD;<;dT<ddmHLUGO=cGXJ1
+IV0FE:1W@16lk0jb47Ke1`1
+R2
+R0
+w1530936023
+8D:/modelisim/modelsim_ase/jizu/PC.v
+FD:/modelisim/modelsim_ase/jizu/PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/modelisim/modelsim_ase/jizu/PC.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/PC.v|
+!i113 1
+R4
+n@p@c
+vRegisterFile
+R6
+!i10b 1
+!s100 MkVH=`hBhT29<nY<oVA^c2
+IddCK_ZfQVRbYgi2b?ILd;0
+R2
+R0
+w1530936760
+8D:/modelisim/modelsim_ase/jizu/registerFile.v
+FD:/modelisim/modelsim_ase/jizu/registerFile.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/modelisim/modelsim_ase/jizu/registerFile.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/registerFile.v|
+!i113 1
+R4
+n@register@file
+vSignZeroExtend
+R1
+!i10b 1
+!s100 _i[^8z;ojzaOgnN4Gi5K[2
+I8BZ_RhZmUV]no]W`5cQ^J1
+R2
+R0
+w1528809044
+8D:/modelisim/modelsim_ase/jizu/ExE.v
+FD:/modelisim/modelsim_ase/jizu/ExE.v
+L0 2
+R3
+r1
+!s85 0
+31
+R5
+!s107 D:/modelisim/modelsim_ase/jizu/ExE.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/ExE.v|
+!i113 1
+R4
+n@sign@zero@extend
+vSingleCPU
+R6
+!i10b 1
+!s100 QEYVOLcHODgaAhSge1Q_D2
+IQ9Ygl<HncgWK0S0gjHAi[1
+R2
+R0
+w1530674609
+8D:/modelisim/modelsim_ase/jizu/SingleCpu.v
+FD:/modelisim/modelsim_ase/jizu/SingleCpu.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/modelisim/modelsim_ase/jizu/SingleCpu.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/SingleCpu.v|
+!i113 1
+R4
+n@single@c@p@u
+vtSingleCPU
+!s110 1530936777
+!i10b 1
+!s100 mOn;Ka<mKLO:IBBWzV6711
+IZfiFoYe@zDb_Pm<N3Zz^00
+R2
+R0
+w1530672883
+8D:/modelisim/modelsim_ase/jizu/tSingleCpu.v
+FD:/modelisim/modelsim_ase/jizu/tSingleCpu.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1530936777.000000
+!s107 D:/modelisim/modelsim_ase/jizu/tSingleCpu.v|
+!s90 -reportprogress|300|-work|66|D:/modelisim/modelsim_ase/jizu/tSingleCpu.v|
+!i113 1
+R4
+nt@single@c@p@u

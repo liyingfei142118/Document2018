@@ -1,0 +1,37 @@
+
+module RegisterFile(
+    input CLK,                 
+    input RegWr,
+    input Jal,
+    input Jalr,
+    input [31:0] pc,           
+    input [4:0] rs,            // rs?????????
+    input [4:0] rt,            // rt?????????
+    input [4:0] WriteReg,      // ?????????????????rt?rd??
+    input [31:0] WriteData,    // ????????????
+    output [31:0] busA,   // rs?????????
+    output [31:0] busB    // rt?????????
+    );
+
+
+    reg [31:0] register[0:31];  
+    // ?????32?????????0
+    integer i;
+    initial 
+     begin
+        for(i = 0; i < 32; i = i + 1)  register[i] <= 0;
+     end
+
+    // ????
+     assign busA = register[rs];  
+     assign busB = register[rt];
+
+    // ????
+    always@(negedge CLK)
+     begin
+        if (RegWr && WriteReg != 0)  register[WriteReg] <= WriteData;
+        else if(Jal || Jalr)
+		register[31] <= pc+4;
+     end 
+
+endmodule
