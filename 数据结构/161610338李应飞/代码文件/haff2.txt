@@ -1,0 +1,117 @@
+z 	 i n c l u d e < i o s t r e a m > 
+ u s i n g   n a m e s p a c e   s t d ; 
+ z 	 i n c l u d e < m a l l o c . h > 
+ t y p e d e f   s t r u c t     Q N o d e 
+ { 
+ i n t   d a t a ; 
+ s t r u c t   Q N o d e   * n e x t ; 
+ } Q N o d e , * Q u e u e P t r ; 
+ 
+ t y p e d e f   s t r u c t 
+ { 
+ Q u e u e P t r   f r o n t ;   
+ Q u e u e P t r   r e a r ; 
+ } L i n k Q u e u e ; 
+ v o i d   I n i t Q u e u e ( L i n k Q u e u e   & Q ) 
+   { 
+   Q . f r o n t = Q . r e a r = ( Q N o d e   * ) m a l l o c ( s i z e o f ( Q N o d e ) ) ; 
+   i f ( ! Q . f r o n t ) e x i t ( 0 ) ; 
+   Q . f r o n t - > n e x t = N U L L ; 
+   i n t   n ; 
+ c o u t < < " T h e   e l e m e n t   n u m b e r : " ; 
+ c i n > > n ; 
+ c o u t < < " P l e a s e   i n p u t   e v e r y   n u m b e r : " ; 
+ 
+ f o r ( i n t   i = 0 ; i < n ; i + + ) 
+ { Q N o d e   * s ; 
+ s = ( Q N o d e   * ) m a l l o c ( s i z e o f ( Q N o d e ) ) ; 
+ c i n > > s - > d a t a ; 
+ Q . r e a r - > n e x t = s ; 
+ Q . r e a r = Q . r e a r - > n e x t ; 
+ }   
+ Q . r e a r - > n e x t = N U L L ; 
+   } 
+   v o i d   v i s i t   ( i n t   e ) 
+   { 
+   c o u t < < e < < "   " ; 
+   } 
+   v o i d   Q u e u e T r a v e r s e ( L i n k Q u e u e   Q ) 
+   { 
+   Q u e u e P t r   L ; 
+   i f ( Q . f r o n t - > n e x t ! = N U L L ) 
+   { 
+   L = Q . f r o n t - > n e x t ; 
+   c o u t < < " o u t p u t   a l l   e l e m e n t : " ; 
+   w h i l e ( L ) 
+   { 
+   c o u t < < L - > d a t a < < "   " ; 
+   L = L - > n e x t ; 
+   } 
+   } 
+   } 
+   v o i d   D e s t r o y Q u e u e ( L i n k Q u e u e   & Q ) 
+   { 
+   Q . f r o n t = Q . f r o n t - > n e x t ; 
+   w h i l e ( Q . f r o n t ) 
+   { 
+   Q . r e a r = Q . f r o n t - > n e x t ; 
+   f r e e ( Q . f r o n t ) ; 
+   Q . f r o n t = Q . r e a r ; 
+   } 
+   } 
+   v o i d   z f 	 	 e a r Q u e u e ( L i n k Q u e u e   & Q ) 
+   { 
+   Q . f r o n t = Q . f r o n t - > n e x t ; 
+   w h i l e ( Q . f r o n t ) 
+   { 
+   Q . r e a r = Q . f r o n t - > n e x t ; 
+   f r e e ( Q . f r o n t ) ; 
+   Q . f r o n t = Q . r e a r ; 
+   } 
+   } 
+   b o o l   Q u e u e E m p t y ( L i n k Q u e u e   Q ) 
+   { 
+   i f ( Q . f r o n t - > n e x t = = N U L L ) 
+   r e t u r n   t u r e ; 
+   e l s e   
+   r e t u r n   f a l s e ; 
+   } 
+   i n t   Q u e u e L e n g t h ( L i n k Q u e u e   Q ) 
+   { 
+   i n t   i = 0 ; 
+   Q . f r o n t = Q . f r o n t - > n e x t ; 
+   w h i l e ( Q . f r o n t ) 
+   { 
+   i + + ; 
+   Q . f r o n t = Q . r e a r ; 
+   } 
+   r e t u r n   i ; 
+   } 
+ v o i d   E n Q u e u e ( l i k e Q u e u e   & Q , i n t   e ) 
+   { 
+   Q u e u e p t r   s ; 
+   s = ( Q N o d e   * ) m a l l o c ( s i z e o f ( Q N o d e ) ) ; 
+   i f ( ! p ) e x i t ( 0 ) ; 
+   s - > d a t a = e ; 
+   Q . r e a r - > n e x t = s ; 
+   Q . r e a r = Q . r e a r - > n e x t ; 
+   Q . r e a r - > n e x t = N U L L ; 
+   } 
+ v o i d   D e Q u e u e ( L i n k Q u e u e   & Q , i n t   & e ) 
+ { 
+ i f ( Q . f r o n t = = Q . r e a r ) e x i t ( 0 ) ; 
+ Q u e u e p t r   s ; 
+ s = Q . f r o n t - > n e x t ; 
+ e = s - > d a t a ; 
+ Q . f r o n t - > n e x t = s - > n e x t ; 
+ i f ( Q . r e a r = = s ) 
+ Q . r e a r = Q . f r o n t ; 
+ f r e e ( s ) ; 
+ } 
+ i n t   m a i n ( ) 
+ { 
+ L i n k Q u e u e   Q ; 
+ I n i t Q u e u e ( Q ) ; 
+ Q u e u e T r a v e r s e ( Q ) ; 
+ r e t u r n   0 ; 
+ }   

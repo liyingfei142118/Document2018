@@ -1,0 +1,136 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+四则运算.exe -- emu8086 assembler version: 4.08  
+ 
+[ 2018/11/3  --  14:09:44 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       
+[   2]        :                                       ; You may customize this and other start-up templates;
+[   3]        :                                       ; The location of this template is c:\emu8086\inc\0_com_template.txt
+[   4]        :                                       
+[   5]        :                                       
+[   6]        :                                       DATA  SEGMENT
+[   7]    0000: 34 12 78 56                           A	DW      1234H,  5678H   	 	;被加数
+[   8]    0004: DC FE 3A 12                           B	DW      0FEDCH, 123AH  	 	;加数
+[   9]    0008: 00 00 00 00                           C	DW      2  DUP (?) 	 	 	 	;预留和
+[  10]        :                                       
+[  11]    000C: DC FE 98 BA                           AD  	 DW      0FEDCH, 0BA98H 	 	;被减数
+[  12]    0010: 34 12 9A 78                           BD  	 DW      1234H,  789AH  	 	;减数
+[  13]    0014: 00 00 00 00                           CD  	 DW      2  DUP (?) 	 	 	 	;预留差
+[  14]        :                                       
+[  15]    0018: 78 D6                                 A1  	 DW      0D678H  	 	 	 	;被乘数
+[  16]    001A: 12 00                                 B1  	 DW      0012H 	 	 	 	 	;乘数
+[  17]    001C: 00 00 00 00                           C1  	 DW      2  DUP (?) 	 	 	 	;预留积
+[  18]        :                                       
+[  19]    0020: 78 56 34 02                           A2  	 DW      5678H,  0234H  	 	;被除数
+[  20]    0024: 34 F2                                 B2  	 DW      0F234H  	 	 	 	;除数
+[  21]    0026: 00 00 00 00                           C2  	 DW      2  DUP (?) 	 	 	 	;预留商,余数
+[  22]        :                                       DATA  ENDS
+[  23]        :                                       
+[  24]        :                                       STACK1 	 SEGMENT  STACK
+[  25]    0030: 00 00 00 00 00 00 00 00 00 00 00 00   DB      100  DUP(0)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00                         
+[  26]        :                                       STACK1 	 ENDS
+[  27]        :                                       
+[  28]        :                                       CODE   SEGMENT
+[  29]        :                                       ASSUME  CS:CODE,DS:DATA,SS:STACK1
+[  30]        :                                       
+[  31]    00A0:                                       START  PROC  FAR
+[  32]    00A0: 1E                                    PUSH  DS
+[  33]    00A1: B8 00 00                              	MOV 	AX,0          ;标准序
+[  34]    00A4: 50                                    	PUSH  	AX
+[  35]    00A5: B8 00 00                              MOV 	AX, DATA
+[  36]    00A8: 8E D8                                 MOV 	DS, AX
+[  37]        :                                       	
+[  38]    00AA: A1 00 00                              	MOV 	AX, A
+[  39]    00AD: 03 06 04 00                           	ADD 	AX,B
+[  40]    00B1: A3 08 00                              	MOV 	C,AX
+[  41]    00B4: A1 02 00                              	MOV 	AX,A+2            ;32位加32位
+[  42]    00B7: 13 06 06 00                           ADC     AX,B+2
+[  43]    00BB: A3 0A 00                              MOV     C+2,AX
+[  44]        :                                       
+[  45]    00BE: A1 0C 00                              	MOV 	AX, AD
+[  46]    00C1: 2B 06 10 00                           	SUB 	AX,BD
+[  47]    00C5: A3 14 00                              	MOV 	CD,AX
+[  48]    00C8: A1 0E 00                              	MOV 	AX,AD+2            ;32位减32位
+[  49]    00CB: 1B 06 12 00                           SBB     AX,BD+2
+[  50]    00CF: A3 16 00                              MOV     CD+2,AX
+[  51]        :                                       
+[  52]    00D2: A1 18 00                              	MOV 	AX, A1
+[  53]    00D5: F7 2E 1A 00                           	IMUL 	B1
+[  54]    00D9: A3 1C 00                              	MOV 	C1,AX            ;16位乘16位
+[  55]    00DC: 89 16 1E 00                           MOV     C1+2,DX
+[  56]        :                                       
+[  57]    00E0: A1 20 00                              MOV 	AX, A2
+[  58]    00E3: F7 3E 24 00                           	IDIV 	B2
+[  59]    00E7: A3 26 00                              	MOV 	C2,AX            ;32位除16位
+[  60]    00EA: 89 16 1E 00                           MOV     C1+2,DX
+[  61]    00EE: 58                                    POP    AX
+[  62]    00EF: 1F                                    POP    DS
+[  63]    00F0: CB                                    RET
+[  64]        :                                       START ENDP
+[  65]        :                                       
+[  66]        :                                       CODE  ENDS
+[  67]        :                                       END       START
+[  68]        :                                       
+[  69]        :                                       
+[  70]        :                                       
+[  71]        :                                       
+[  72]        :                                       
+[  73]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: F1      -   bytes on last page (l.byte)
+0003: 00      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 03      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 64      -   SP - stack pointer (l.byte)
+0011: 00      -   SP - stack pointer (h.byte)
+0012: 5C      -   check sum (l.byte)
+0013: 4F      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 0A      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 06      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 0A      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================

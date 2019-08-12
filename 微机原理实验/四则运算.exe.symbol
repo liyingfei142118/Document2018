@@ -1,0 +1,24 @@
+< THE SYMBOL TABLE >  Àƒ‘Ú‘ÀÀ„.exe  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+DATA                     	00000     	-5        	SEGMENT   	(ITSELF)  
+A                        	00000     	2         	VAR       	DATA      
+B                        	00004     	2         	VAR       	DATA      
+C                        	00008     	2         	VAR       	DATA      
+AD                       	0000C     	2         	VAR       	DATA      
+BD                       	00010     	2         	VAR       	DATA      
+CD                       	00014     	2         	VAR       	DATA      
+A1                       	00018     	2         	VAR       	DATA      
+B1                       	0001A     	2         	VAR       	DATA      
+C1                       	0001C     	2         	VAR       	DATA      
+A2                       	00020     	2         	VAR       	DATA      
+B2                       	00024     	2         	VAR       	DATA      
+C2                       	00026     	2         	VAR       	DATA      
+STACK1                   	00003     	-5        	SEGMENT   	(ITSELF)  
+CODE                     	0000A     	-5        	SEGMENT   	(ITSELF)  
+START                    	00000     	-1        	FAR       	CODE      
+===================================================================================================
+[ 2018/11/3  --  14:09:44 ] 
+< END >
+ 
