@@ -1,0 +1,41 @@
+        //嵌入汇编代码as411
+        //子程序名（入口标号）：RIGHT90
+        //功能：把8X8点阵顺时针旋转90度
+        //入口参数：堆栈中含有原始点阵和目标点阵区域的首地址
+        //说    明：寄存器ECX和EDX受到影响
+        _asm  {
+        RIGHT90:
+            PUSH  EBP
+            MOV   EBP, ESP                  ;建立堆栈框架
+            PUSH  ESI
+            PUSH  EDI                       ;保护使用到的关心寄存器
+            PUSH  EBX
+            ;
+            MOV   ESI, [EBP+8]              ;从堆栈中取得原始点阵首地址
+            MOV   EDI, [EBP+12]             ;从堆栈中取得目标点阵首地址
+            MOV   EBX, 0                    ;表示目标点阵的当前位
+            MOV   ECX, 7                    ;表示原始点阵的列
+        LAB1:
+            MOV   EDX, 0                    ;表示原始点阵的行
+        LAB2:
+            BTR   DWORD PTR [EDI], EBX      ;先清目标点阵的当前位
+            BT    DWORD PTR [ESI+EDX], ECX  ;测试原始点阵的EDX行的CX列
+            JNC   LAB3                      ;如为0，无需设置
+            BTS   DWORD PTR [EDI], EBX      ;设置目标点阵的当前位
+        LAB3:
+            INC   EBX                       ;依次调整目标点阵当前位
+            ;
+            INC   EDX                       ;调整原始点阵行
+            CMP   EDX, 8                    ;根据行号，控制循环
+            JNZ   LAB2
+            ;
+            DEC   ECX                       ;调整原始点阵列
+            CMP   ECX, -1                   ;根据列号，控制外循环
+            JNZ   LAB1
+            ;
+            POP   EBX
+            POP   EDI                       ;恢复被保护寄存器
+            POP   ESI
+            POP   EBP                       ;撤销堆栈框架
+            RET                             ;返回
+        }

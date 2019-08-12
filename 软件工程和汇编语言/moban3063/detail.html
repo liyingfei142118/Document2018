@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <title>二手商品交易系统</title>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
+        <!-- Essential styles -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css" type="text/css"> 
+
+        <!-- Dlapak styles -->
+        <link id="theme_style" type="text/css" href="assets/css/style1.css" rel="stylesheet" media="screen">
+
+        <!-- Assets -->
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.theme.css">
+
+        <!-- JS Library -->
+        <script src="assets/js/jquery.js"></script>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="navbar navbar-default navbar-fixed-top navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand"><span class="logo"><i class="fa fa-recycle"></i> 删除商品</span></a>
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+    
+                            <li><a href="#">注册</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;我的商品</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">发布商品</a></li>
+                                    <li><a href="#">添加商品</a></li>
+                                    <li><a href="#">修改商品信息</a></li>
+                                    <li><a href="#">删除商品</a></li>
+                                </ul>
+                                </li>
+                                <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;我的订单</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">发布商品</a></li>
+                                    <li><a href="#">添加商品</a></li>
+                                    <li><a href="#">修改商品信息</a></li>
+                                    <li><a href="#">删除商品</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">个人中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+            <section class="main">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="post">
+  
+ 
+
+
+                                        <div class="post-body">
+                                            <h4><strong>XXXXX</strong></h4>
+                                           <textarea name="txt6" id="txt6" size="30"  cols="10" rows="4" value="照片"></textarea>
+                                            <ul>
+                                                <li>发布人 : xxxx</li>
+                                                <li>商品数量 : xxxx</li>
+                                                <li>商品价格 : xxxx</li>
+                                                <li>联系方式 : xxxx</li>
+
+                                            </ul>
+                                            <p>
+                                               <textarea name="txt6" id="txt6" size="30"  cols="60" rows="13" value="详细信息"></textarea>
+                                            </p>
+                                            <p><input type="submit" name="提交" id="sub2" value="修改商品信息">&nbsp;
+        <input type="reset" name="Submit2" value="删除"> </p>
+
+
+  
+                        
+               
+
+
+        <!-- Send Message Modal -->
+        <div aria-labelledby="sendMessageModalLabel" role="dialog" tabindex="-1" id="sendMessageModal" class="modal fade in">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+                        <h4 id="sendMessageModalLabel" class="modal-title">Send Message to Seller</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="control-label">Name:</label>
+                                <input type="text" class="form-control input-lg" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Email:</label>
+                                <input type="email" class="form-control input-lg" placeholder="Your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="message-text">Message:</label>
+                                <textarea id="message-text" class="form-control input-lg" placeholder="Your message" required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                        <button class="btn btn-custom" type="button"><i class="fa fa-paper-plane"></i> Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Message Modal -->
+
+        <!-- Essentials -->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+        <script src="assets/plugins/counter/jquery.countTo.js"></script>
+        <script defer src="assets/plugins/flexslider/jquery.flexslider.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                // ===============Flexslider=====================
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlNav: "thumbnails",
+                    directionNav: false,
+                    start: function (slider) {
+                        $('body').removeClass('loading');
+                    }
+                });
+
+                // ==========tooltip initial=================
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </body>
+</html> 

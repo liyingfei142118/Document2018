@@ -1,0 +1,10 @@
+        //嵌入汇编代码as49（处理1个64位的位串）
+        _asm  {
+            LEA   EDX, bitstr2          ;取得位串2的基地址
+            ;             
+            MOV   ECX, 17               ;第17位
+            BTS   DWORD PTR [EDX], ECX  ;设置第17位
+            ;
+            MOV   ECX, 43               ;第43位
+            BTS   DWORD PTR [EDX], ECX  ;设置第43位
+        }

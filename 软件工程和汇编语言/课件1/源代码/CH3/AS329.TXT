@@ -1,0 +1,23 @@
+        //嵌入汇编代码as329
+        #define  LEN  10
+        _asm  {
+            LEA   EBX, buffer           ;设置缓冲区开始地址
+            MOV   ESI, 0                ;I=0
+        FORI:
+            MOV   EDI, ESI
+            INC   EDI                   ;J=I+1
+        FORJ:
+            MOV   EAX, [EBX+4*ESI]
+            CMP   EAX, [EBX+4*EDI]      ;A[I]与A[J]比较
+            JLE   NEXTJ                 ;A[I]小于等于A[J]转
+            XCHG  EAX, [EBX+4*EDI]      ;A[I]与A[J]交换
+            MOV   [EBX+4*ESI], EAX
+        NEXTJ:
+            INC   EDI                   ;J=J+1
+            CMP   EDI, LEN
+            JB    FORJ                  ;J<N时转
+        NEXTI:
+            INC   ESI                   ;I=I+1
+            CMP   ESI, LEN - 1
+            JB    FORI                  ;I<N-1时转
+        }

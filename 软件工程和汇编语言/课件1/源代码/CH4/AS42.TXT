@@ -1,0 +1,14 @@
+        //嵌入汇编代码as42
+        //假设DF=0；假设数据段寄存器DS与附加段寄存器ES相同
+        _asm  {
+            LEA   ESI, src_str          //取得源串起始地址
+            LEA   EDI, dst_str          //取得目的串起始地址
+            MOV   ECX, 3                //字符串长度
+        NEXT:
+            LODSD                       //取一个双字（4个字节）
+            STOSD                       //存一个双字（4个字节）
+            LOOP  NEXT                  //循环处理
+            ;
+            LODSW                       //取一个字（2个字节）
+            STOSW                       //存一个字（2个字节）
+        }

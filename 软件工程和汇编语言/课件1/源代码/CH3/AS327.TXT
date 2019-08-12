@@ -1,0 +1,33 @@
+        //嵌入汇编代码as327
+        _asm  {
+            LEA   ESI, buffer           ;置指针初值
+            MOV   EAX, intx             ;取得待转换的数据
+            CMP   EAX, 0                ;判断待转换数据是否为负数
+            JGE   LAB1                  ;非负数，转
+            MOV   BYTE  PTR  [ESI], '-' ;先保存一个负号
+            INC   ESI                   ;调整指针
+            NEG   EAX                   ;取相反数，得正数
+        LAB1:
+            MOV   ECX, 10               ;最多循环10次
+            MOV   EBX, 10               ;每次除以10
+            MOV   EDI, 0                ;置有效位数的计数器初值
+        NEXT1:
+            XOR   EDX, EDX
+            DIV   EBX                   ;获得1位十进制数
+            ;
+            PUSH  EDX                   ;把所得1位十进制数压入堆栈//@1
+            INC   EDI                   ;有效位数增加1
+            ;
+            OR    EAX, EAX              ;测试结果（商）
+            LOOPNE  NEXT1               ;如结果不为0，考虑继续循环//@2
+            ;-----------------------------------------
+            MOV   ECX, EDI              ;置下一个循环的计数
+        NEXT2:
+            POP   EDX                   ;从堆栈弹出余数//@3
+            ADD   DL, '0'               ;转成对应的ASCII码
+            MOV   [ESI], DL             ;依次存放到缓冲区
+            INC   ESI
+            LOOP  NEXT2                 ;循环处理下一位
+            ;
+            MOV   BYTE  PTR  [ESI], 0   ;设置字符串结束标志
+        }

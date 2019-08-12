@@ -1,0 +1,77 @@
+        //嵌入汇编代码as47
+        //调用时，主程序需要注意压入堆栈的参数顺序
+        _asm  {
+        ;子程序名：MEMMOVE
+        ;功    能：移动（复制）数据块
+        ;入口参数：(1)堆栈传递目的地起始地址偏移
+        ;          (2)堆栈传递源数据块起始地址偏移
+        ;          (3)数据块长度（字节数）
+        ;出口参数：EAX = 目的地起始地址偏移
+        ;说    明：设字符串以空（值0）为结束标记
+        ;          影响寄存器EAX、ECX和EDX
+        MEMMOVE:
+            PUSH   EBP              ;建立堆栈框架
+            MOV    EBP, ESP         ;
+            PUSH   EDI              ;保护寄存器
+            PUSH   ESI              ;保护寄存器
+            MOV    ESI, [EBP+12]    ;esi = 源数据块起始地址偏移
+            MOV    ECX, [EBP+16]    ;ecx = 移动数据块的长度（字节数）
+            MOV    EDI, [EBP+8]     ;edi = 目的地起始地址偏移
+            ; 
+            MOV    EAX, ECX         ;eax = 长度（字节数）
+            MOV    EDX, ECX         ;edx = 长度（字节数）
+            ADD    EAX, ESI         ;eax=源数据块末尾后
+            ;
+            CMP    EDI, ESI         ;目的起始地址 <= 源起始地址  吗？
+            JBE    CopyUp           ;是，那么由低端向高端复制
+            CMP    EDI, EAX         ;目的起始地址 < 源数据块末尾后  吗？
+            JB     CopyDown         ;是，那么由高端向低端复制
+            ;
+        CopyUp:                     ;由低端向高端复制
+        Dword_align:
+            SHR    ECX, 2           ;长度（字节数）转换成双字数
+            REP    MOVSD            ;双字为单位移动（复制）
+	        AND    EDX, 3           ;长度 % 4（余数）
+            JZ     TrailUp0         ;整除，不用处理零头
+        TrailUp3:                   ;====最多剩余3个字节
+            SHR    EDX, 1           ;除以2
+            JZ     TrailUp1         ;为0，表示剩余1个字节
+        TrailUp2:                   ;====剩余3个或2个字节
+            MOVSW                   ;复制2个字节
+            JNC    TrailUp0         ;CF=0，表示刚才被2整除
+        TrailUp1:                   ;====剩余1个字节
+            MOVSB                   ;复制1个字节
+        TrailUp0:
+            JMP    SHORT  ToRet     ;准备返回
+            ; -----------------------------------
+        CopyDown:
+            LEA    ESI, [ESI+ECX-4] ;esi = 源数据块末尾 - 4
+            LEA    EDI, [EDI+ECX-4] ;edi = 目的地末尾 - 4
+            SHR    ECX, 2           ;长度（字节数）转换成双字数
+            STD                     ;置方向标志DF（串操作方向由高向低）
+            REP    MOVSD            ;双字为单位移动
+            AND    EDX, 3           ;长度 % 4（余数）
+            JZ     TrailDown0       ;整除，不用处理零头
+        TrailDown3:
+            SHR    EDX, 1           ;====最多剩余3个字节
+            JZ     TrailDown1       ;为0，表示剩余1个字节
+        TrailDown2:                 ;====剩余3个或2个字节
+            INC    ESI              ;先调整指针 //@1
+            INC    EDI              ;
+            INC    ESI
+            INC    EDI
+            MOVSW                   ;复制2个字节
+            JNC    TrailDown0
+        TrailDown1:
+            INC    ESI              ;先调整指针 //@2
+            INC    EDI
+            MOVSB                   ;复制1个字节
+        TrailDown0:
+            CLD                     ;清方向标志DF
+        ToRet:
+            POP    ESI              ;恢复寄存器
+            POP    EDI
+            MOV    EAX, [EBP+8]     ;准备出口参数
+            POP    EBP              ;撤销堆栈框架
+            RET
+        }

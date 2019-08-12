@@ -1,0 +1,24 @@
+        //嵌入汇编代码as333
+        //子程序名（入口标号）：DSTOBV
+        //功    能：把十进制数字串转换成对应的二进制数值
+        //入口参数：ESI=待转换数字串的起始地址偏移
+        //          ECX=待转换数字串的长度（十进制数字的位数）
+        //出口参数：EAX=转换所得数值
+        //说    明：(1)不考虑数字串过长的情形
+        //          (2)寄存器EBX、ECX、EDX、ESI受到影响
+        _asm  {
+        DSTOBV:
+            XOR   EDX, EDX          ;EDX作为Y
+            XOR   EAX, EAX
+            JECXZ  LAB2             ;排除数字串为空的情形
+        LAB1:
+            IMUL  EDX, 10           ;Y*10
+            MOV   AL, [ESI]         ;取一位字符
+            INC   ESI
+            AND   AL, 0FH           ;得到某一位十进制数值di
+            ADD   EDX, EAX          ;Y = Y*10+di
+            LOOP  LAB1              ;迭代计算
+        LAB2:
+            MOV   EAX, EDX          ;准备返回值
+            RET
+        }

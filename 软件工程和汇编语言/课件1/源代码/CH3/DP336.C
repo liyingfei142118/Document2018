@@ -1,0 +1,76 @@
+    //演示程序dp336.c
+    #include  <stdio.h>
+    int  main(  )
+    {
+        char  buff1[16] = "328";
+        char  buff2[16] = "1234024";
+        unsigned  x1, x2;
+        unsigned  sum;
+        ;
+        _asm  {
+            LEA   ESI, buff1        ;转换一个字符串
+            CALL  DSTOB
+            MOV   x1, EAX
+            ;
+            LEA   ESI, buff2        ;转换另一个字符串
+            CALL  DSTOB
+            MOV   x2, EAX
+            ;
+            MOV   EDX, x1           ;求和
+            ADD   EDX, x2
+            MOV   sum, EDX
+            ;                   ;如这些代码位于前面，
+            JMP   OK            ;通过该指令来跳过随后的子程序部分！//@1
+        }
+        ////////////////////////////////////////////////////
+        //嵌入汇编代码as334
+        //子程序名（入口标号）：DSTOB
+        //功    能：把十进制数字串转换成对应的二进制数值，遇到非数字符结束
+        //入口参数：ESI=待转换数字串的起始地址偏移
+        //出口参数：EAX=转换所得数值（空串时，返回值是0）
+        //说    明：(1)数字串以空（0）为结束标志，或者非数字符为结束标志
+        //          (2)如果数字串太长，导致数值超过32位，高位被截掉
+        //          (3)寄存器EDX受影响
+        //          (4)调用子程序ISDIGIT（判断是否数字符）
+        _asm  {
+        DSTOB:
+            PUSH  ESI               ;保护寄存器ESI
+            XOR   EDX, EDX          ;EDX作为Y
+            XOR   EAX, EAX
+        LAB1:
+            MOV   AL, [ESI]         ;取一个字符
+            INC   ESI
+            CALL  ISDIGIT           ;判字符是否有效
+            OR    AL, AL
+            JZ    LAB2              ;无效，转返回
+            IMUL  EDX, 10           ;Y*10
+            AND   AL, 0FH           ;得到某一位十进制数值di
+            ADD   EDX, EAX          ;Y = Y*10+di
+            JMP   LAB1              ;迭代计算
+        LAB2:
+            MOV   EAX, EDX          ;准备返回值
+            POP   ESI               ;恢复ESI
+            RET
+        }
+        ////////////////////////////////////////////////////
+        //嵌入汇编代码as335
+        //子程序名（入口标号）：ISDIGIT
+        //功能：判断字符是否为十进制数字符
+        //入口参数：AL=字符
+        //出口参数：如果是非数字符，AL=0；否则AL保持不变
+        _asm  {
+        ISDIGIT:
+            CMP   AL, '0'           ;与字符'0'比较
+            JL    ISDIG1            ;有效字符是'0'-'9'
+            CMP   AL,'9'
+            JA    ISDIG1
+            RET
+        ISDIG1:                     ;非数字符
+            XOR   AL,AL             ;AL= 0
+            RET
+        }
+        ////////////////////////////////////////////////////
+    OK:
+        printf("%d\n", sum);
+        return  0;              ;//@2
+    }

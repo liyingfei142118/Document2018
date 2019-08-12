@@ -1,0 +1,14 @@
+        //嵌入汇编代码as45
+        _asm  {
+            ;设已经清方向标志DF
+            ;设ES与DS已经一致
+            ;
+            MOV   EDI, ptobuff      ;取指向目的串的指针初值
+            MOV   ECX, -1           ;使得ECX= 0FFFFFFFFH  //@1
+            MOV   AL, 20H           ;空格符号
+            ;
+            REPE  SCASB             ;重复扫描空格符  //@2
+            DEC   EDI               ;//@3
+            ;
+            MOV   ptobuff, EDI      ;保存定位后的指针
+        }

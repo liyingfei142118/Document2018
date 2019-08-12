@@ -1,0 +1,34 @@
+        //嵌入汇编代码as332
+        //子程序名（入口标号）：BTOHS
+        //功    能：把32位二进制数转换为8位十六进制数的ASCII码串
+        //入口参数：(1)存放ASCII码串缓冲区的首地址（先压入堆栈）
+        //         (2)二进制数据（后压入堆栈）
+        //出口参数：无
+        //其他说明：(1)缓冲区应该足够大（至少9个字节）
+        //          (2)ASCII串以字节0为结束标记
+        //          (3)影响寄存器EAX、ECX、EDX的值
+        __asm  {
+        BTOHS:                      ;子程序入口标号
+            PUSH  EBP
+            MOV   EBP, ESP          ;建立堆栈框架
+            PUSH  EDI               ;保护寄存器EDI
+            MOV   EDI, [EBP+12]     ;取得存放ASCII码串的首地址
+            MOV   EDX, [EBP+8]      ;取得待转换数据
+            MOV   ECX, 8            ;设置循环次数
+        NEXT:
+            ROL   EDX, 4            ;循环左移4位，高4位移到低4位
+            MOV   AL, DL            ;待转换数据送到AL
+            AND   AL, 0FH           ;把AL中低4位转成对应ASCII码
+            ADD   AL, '0'
+            CMP   AL, '9'
+            JBE   LAB580
+            ADD   AL, 7
+        LAB580:
+            MOV   [EDI], AL         ;把所得字符保存到缓冲区
+            INC   EDI               ;调整缓冲区指针
+            LOOP  NEXT              ;循环，转换下一个4位
+            MOV   BYTE PTR [EDI], 0 ;置字符串结束标志
+            POP   EDI               ;恢复EDI
+            POP   EBP
+            RET
+        }

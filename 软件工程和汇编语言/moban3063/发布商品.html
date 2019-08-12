@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <title>二手商品交易系统</title>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
+        <!-- Essential styles -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css" type="text/css"> 
+
+        <!-- Dlapak styles -->
+        <link id="theme_style" type="text/css" href="assets/css/style1.css" rel="stylesheet" media="screen">
+
+        <!-- Assets -->
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.theme.css">
+
+        <!-- JS Library -->
+        <script src="assets/js/jquery.js"></script>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="navbar navbar-default navbar-fixed-top navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand"><span class="logo"><i class="fa fa-recycle"></i> 发布商品</span></a>
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+    
+                            <li><a href="#">注册</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;我的商品</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">发布商品</a></li>
+                                    <li><a href="#">添加商品</a></li>
+                                    <li><a href="#">修改商品信息</a></li>
+                                    <li><a href="#">删除商品</a></li>
+                                </ul>
+                                </li>
+                                <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;我的订单</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">发布商品</a></li>
+                                    <li><a href="#">添加商品</a></li>
+                                    <li><a href="#">修改商品信息</a></li>
+                                    <li><a href="#">删除商品</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">个人中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+<table width="800" height="333" border="0" align="center" cellpadding="0" cellspacing="0" background="red">
+    <tr>
+        <td align="center" valign="top"><br>
+            <br>
+            <br>
+            <br><br><table width="86%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#6699CC">
+                
+                <form name="form1" onreset="return AllReset()" onsubmit="return AllSubmit()">
+                    
+                    <tr bgcolor="#FFFFFF">
+                        <td height="22" align="right">商品种类:</td>
+                        <td height="22" align="left">
+                            <select name="txt1" id="txt1">
+                                <option value="shebei">生活用品</option>
+                                <option value="dianqi">书籍</option>
+                                <option value="yongping">代步工具</option>
+                            </select>
+
+                        </td>
+                    </tr>
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">商品名:</td>
+<td height="22" align="left"><input type="text" name="txt3" id="txt3" size="30" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">商品照片:</td>
+<td height="22" align="left">   <input type="text" name="txt4" id="txt4" size="10" maxlength="50">
+<input type="submit" name="提交" id="sub2" value="选择文件">&nbsp;
+<input type="submit" name="提交" id="sub2" value="上传"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">商品价格:</td>
+<td height="22" align="left">   <input type="text" name="txt4" id="txt4" size="10" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">商品数量:</td>
+<td height="22" align="left">   <input type="text" name="txt4" id="txt4" size="10" maxlength="50"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">商品详细信息:</td> 
+<td height="22" align="left"><textarea name="txt6" id="txt6" size="30"  cols="35" rows="4"></textarea></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+<td height="22" align="right">联系方式:</td>  
+<td height="22" align="left"><input type="text" name="txt7" id="txt7" size="10"></td>
+</tr>
+
+<tr bgcolor="#FFFFFF">
+    <td height="22" colspan="2" align="center"><input type="submit" name="提交" id="sub2" value="提交审核">&nbsp;
+        <input type="reset" name="Submit2" value="重置"></td>
+</tr>
+</form>
+        </table>
+        </td>
+    </tr>
+    
+</table>
+           
+    <div class="footer">
+        <div class="container">
+        <ul class="pull-left footer-menu">
+            <li>
+                <a href="#"> Home </a>
+                <a href="#"> About us </a>
+                <a href="#"> Contact us </a>
+            </li>
+        </ul>
+        <ul class="pull-right footer-menu">
+            <li>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<!-- Essentials -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+<script src="assets/plugins/counter/jquery.countTo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // ===========Featured Owl Carousel============
+        if ($(".owl-carousel-featured").length > 0) {
+            $(".owl-carousel-featured").owlCarousel({
+                items: 3,
+                lazyLoad: true,
+                pagination: true,
+                autoPlay: 5000,
+                stopOnHover: true
+            });
+        }
+
+        // ==================Counter====================
+        $('.item-count').countTo({
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals);
+            },
+            onUpdate: function (value) {
+                console.debug(this);
+            },
+            onComplete: function (value) {
+                console.debug(this);
+            }
+        });
+    });
+</script>
+</body>
+</html> 

@@ -1,0 +1,56 @@
+        //嵌入汇编代码as337
+        //子程序名（入口标号）：STRSTR
+        //功能：在字符串str1中查找第一次出现的字符串str2
+        //说明：符合C函数的调用约定
+        _asm  {
+        STRSTR:
+            PUSH  EBP
+            MOV   EBP, ESP              ;建立堆栈框架
+            ;
+            PUSH  EBX                   ;保护相关寄存器
+            PUSH  ESI
+            PUSH  EDI
+                                        ;测字符串2的长度
+            MOV   EDI, [EBP+12] 
+            DEC   EDI
+        NEXT:
+            INC   EDI
+            CMP   BYTE PTR [EDI],0      ;从串2取1个字符
+            JNZ   NEXT                  ;如果串2没有结束，继续
+                                        ;
+            MOV   ECX, EDI              ;ECX指向串2结束标记处
+            MOV   EAX, [EBP+12]
+            SUB   ECX, EAX              ;地址差是串2长度
+                                        ;
+            JECXZ  OVER1                ;如果串2为空，不需要搜索
+                                        ;在串1中，搜索串2
+            MOV   EDX, ECX              ;保存串2长度
+            MOV   EBX, [EBP+8]          ;取串1首地址
+        FORI:
+            MOV   ESI, EBX              ;ESI=开始搜索串1的起始地址
+            MOV   EDI, [EBP+12]         ;EDI=串2首地址
+            MOV   ECX, EDX              ;ECX=串2长度
+        FORJ:
+            MOV   AL, [ESI]
+            CMP   AL, [EDI]             ;比较一个字符
+            JNZ   NEXTI                 ;不等，从串1下一个字符重新搜索
+        NEXTJ:
+            INC   EDI
+            INC   ESI
+            LOOP  FORJ                  ;继续比较下一字符
+            JMP   OVER2                 ;在串1中，搜索到串2
+        NEXTI:
+            INC   EBX                   ;从串1的下一个字符开始
+            OR    AL, AL                ;判串1是否结束
+            JNZ   FORI                  ;没有结束，重新开始搜索
+                                        ;至此，串1已经结束
+         OVER1:
+            XOR   EBX, EBX
+         OVER2:
+            MOV   EAX, EBX              ;准备出口参数
+            POP   EDI                   ;恢复寄存器
+            POP   ESI
+            POP   EBX
+            POP   EBP                   ;撤销堆栈框架
+            RET
+        }

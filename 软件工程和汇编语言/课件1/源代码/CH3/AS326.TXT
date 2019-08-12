@@ -1,0 +1,15 @@
+        //嵌入汇编代码as326
+        _asm  {
+            LEA   ESI, buffer           ;获存放字符串的缓冲区首地址
+            MOV   EAX, uintx            ;取得待转换的数据
+            MOV   ECX, 10               ;循环次数（十进制数的位数）
+            MOV   EBX, 10               ;十进制的基数是10
+        NEXT:
+            XOR   EDX, EDX              ;形成64位的被除数（无符号数除）
+            DIV   EBX                   ;除以10，EAX含商，EDX含余数
+            ADD   DL, '0'               ;把析出十进制位转成对应的ASCII码
+            MOV   [ESI+ECX-1], DL       ;保存到缓冲区
+            LOOP  NEXT                  ;计数循环
+            ;
+            MOV   BYTE PTR [ESI+10],0   ;设置字符串结束标志
+        }
